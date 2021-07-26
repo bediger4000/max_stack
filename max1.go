@@ -25,6 +25,10 @@ var (
 func main() {
 	stack := &Stack{data: nil, maxValue: nil}
 	for _, str := range os.Args[1:] {
+		if str == "--" {
+			popAll(stack)
+			continue
+		}
 		n, err := strconv.Atoi(str)
 		if err != nil {
 			fmt.Printf("%v\n", err)
@@ -32,7 +36,10 @@ func main() {
 		}
 		stack.push(n)
 	}
+	popAll(stack)
+}
 
+func popAll(stack *Stack) {
 	var n int
 	var err error
 	for err == nil {
