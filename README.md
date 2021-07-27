@@ -58,3 +58,21 @@ albeit they use Python's variable-length arrays instead of a linked list
 for the two stacks.
 
 ## Interview Analysis
+
+It's clear that adding the `max()` method to the abstract stack
+interface got done so as to prevent people from just spewing
+a stack implementation from memory.
+Adding `max()` means thinking a little harder about the problem,
+and causes candidates to write more code than just manipulating
+slices in Python.
+
+It's probably a good idea for the candidate to talk about what
+decisions they make as they outline a solution,
+including noting any vagueness,
+like what type(s) are the input values?
+
+The "constant time" constraint almost certainly exists to keep
+candidates from wandering off into a vail of tears involving
+an array of stack elements sorted by value which gets
+resized and resorted on every push and pop.
+It also allows the interviewer
