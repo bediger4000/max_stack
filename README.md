@@ -62,17 +62,32 @@ for the two stacks.
 It's clear that adding the `max()` method to the abstract stack
 interface got done so as to prevent people from just spewing
 a stack implementation from memory.
-Adding `max()` means thinking a little harder about the problem,
-and causes candidates to write more code than just manipulating
+Adding `max()` means thinking harder about the problem,
+and candidates write more code than just manipulating
 slices in Python.
 
 It's probably a good idea for the candidate to talk about what
 decisions they make as they outline a solution,
-including noting any vagueness,
+including noting any vagueness in the problem statement,
 like what type(s) are the input values?
 
 The "constant time" constraint almost certainly exists to keep
 candidates from wandering off into a vail of tears involving
 an array of stack elements sorted by value which gets
 resized and resorted on every push and pop.
-It also allows the interviewer
+It also lets the interviewer
+see if the candidate understands what "constant time" means
+in the algorithm context.
+
+The interviewer could reasonably expect design choices like
+
+* plain stack implementation as slice or array or linked list
+* max value stack element per value stack element,
+or keeping a minimum number on the max value stack
+* only integer values, or only string values or some other choice
+* full-blown Object Oriented Design, with completely hidden
+implementation, or just enough OOD to get by.
+Go can do some abstract type enforcement with an interface type.
+* consideration given to errors returned or exceptions thrown,
+which in some languages might mean checked vs unchecked exceptions
+in the classes methods
